@@ -1,0 +1,19 @@
+{
+  "name": "restful-blogapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TRUNG NGUYEN",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-sanitizer": "*",
+    "method-override": "*",
+    "mongoose": "*"
+  }
+}
