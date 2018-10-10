@@ -1,15 +1,15 @@
 <% include header.ejs %>
 
+<div class="ui main container">
+    <h1 class="ui header">This is the Index Page</h1>
 
-<h1 class="ui header">This is the Index Page</h1>
-
-<% blogs.forEach(function(blog) { %>
-<div>
-    <h3><%= blog.title %></h3>
-        <img src="<%= blog.image %>" >
-        <span><%= blog.created %></span>
-    <p><%= blog.body %></p>
+    <% blogs.forEach(function(blog) { %>
+    <div>
+        <h3><%= blog.title %></h3>
+            <img src="<%= blog.image %>" >
+            <span><%= blog.created %></span>
+        <p><%= blog.body %></p>
+    </div>
+    <% }) %>
 </div>
-<% }) %>
-
 <% include footer.ejs %>

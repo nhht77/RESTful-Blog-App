@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div class="ui huge header">New Blog</div>
+<form action="/blogs" method="POST" class="ui form">
+    <div class="field">
+        <label for="blog[title]">Title</label>
+        <input name="blog[title]" type="text" placeholder="title">
+    </div>
+    <div class="field">
+            <label for="blog[image]">Image</label>
+            <input name="blog[image]" type="text" placeholder="image">
+    </div>
+    <div class="field">
+            <label for="blog[body]">Blog Content</label>
+            <textarea name="blog[body]" cols="30" rows="10"></textarea>
+    </div>
+    <input class="ui basic button">
+            <i class="icon user"></i>
+            Add Friend
+    </input>
+</form>

@@ -1,0 +1,23 @@
+<% include header.ejs %>
+
+<div class="ui main text container segment">
+<div class="ui huge header">New Blog</div>
+    <form action="/blogs" method="POST" class="ui form">
+        <div class="field">
+            <label for="blog[title]">Title</label>
+            <input name="blog[title]" type="text" placeholder="title">
+        </div>
+        <div class="field">
+                <label for="blog[image]">Image</label>
+                <input name="blog[image]" type="text" placeholder="image">
+        </div>
+        <div class="field">
+                <label for="blog[body]">Blog Content</label>
+                <textarea name="blog[body]" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit" class="ui violet basic big button">
+    </form>
+</div>
+
+
+<% include footer.ejs %>

@@ -1,9 +1,12 @@
 body {
     background-color: #FFFFFF;
   }
-  .ui.menu .item {
-    margin-right: 1em;
-  }
-  .main.container {
+  
+.container.main {
     margin-top: 7em;
   }
+
+  .ui .main .text .container .segment{
+  margin-top: 7em !important;
+}
+  
