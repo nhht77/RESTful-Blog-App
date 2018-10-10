@@ -1,4 +1,7 @@
-<h1>This is the Index Page</h1>
+<% include header.ejs %>
+
+
+<h1 class="ui header">This is the Index Page</h1>
 
 <% blogs.forEach(function(blog) { %>
 <div>
@@ -8,3 +11,5 @@
     <p><%= blog.body %></p>
 </div>
 <% }) %>
+
+<% include footer.ejs %>
