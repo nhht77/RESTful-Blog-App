@@ -9,4 +9,13 @@ body {
   .ui .main .text .container .segment{
   margin-top: 7em !important;
 }
-  
+
+.column{
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.button:hover .ui .primary .basic{
+  background: #2185d0;
+  color: #fff;
+} 

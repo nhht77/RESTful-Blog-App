@@ -1,19 +1,22 @@
-<div class="ui huge header">New Blog</div>
-<form action="/blogs" method="POST" class="ui form">
-    <div class="field">
-        <label for="blog[title]">Title</label>
-        <input name="blog[title]" type="text" placeholder="title">
-    </div>
-    <div class="field">
-            <label for="blog[image]">Image</label>
-            <input name="blog[image]" type="text" placeholder="image">
-    </div>
-    <div class="field">
-            <label for="blog[body]">Blog Content</label>
-            <textarea name="blog[body]" cols="30" rows="10"></textarea>
-    </div>
-    <input class="ui basic button">
-            <i class="icon user"></i>
-            Add Friend
-    </input>
-</form>
+
+<div class="ui card">
+        <div class="image">
+          <img src="<%= blog.image %>">
+        </div>
+        <div class="content">
+          <a class="header"><%= blog.title %></a>
+          <div class="meta">
+            <span class="date">Created at <%= blog.created.toDateString() %></span>
+          </div>
+          <div class="description">
+          <p><%- blog.body %></p>
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <i class="user icon"></i>
+            22 Friends Read This
+          </a>
+        </div>
+      </div>
+      

@@ -4,11 +4,20 @@
     <h1 class="ui header">This is the Index Page</h1>
 
     <% blogs.forEach(function(blog) { %>
-    <div>
-        <h3><%= blog.title %></h3>
-            <img src="<%= blog.image %>" >
-            <span><%= blog.created %></span>
-        <p><%= blog.body %></p>
+    <div class="column">
+        <div class="ui fluid card">
+            <div class="image">
+                <img src="<%= blog.image %>" >
+            </div>
+            <div class="content">
+                <h3 class="header"><%= blog.title %></h3>
+            </div>   
+            <div class="content">  
+                <span class="summary"><%= blog.created.toDateString() %></span>
+                <p><%- blog.body.substring(0,100) %>...</p>
+            </div>
+        <a  href="/blogs/<%= blog._id %>" class="ui primary basic button">Read More</a>        
+        </div>
     </div>
     <% }) %>
 </div>
