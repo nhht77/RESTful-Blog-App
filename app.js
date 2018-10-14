@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const expressSanitizer = require("express-sanitizer");
+const methodOverride = require("method-override");
 
 const app = express();
 const PORT = 3000;
@@ -8,8 +10,10 @@ const PORT = 3000;
 // APP CONFIG
 mongoose.connect("mongodb://localhost:27017/restful_blog_app", { useNewUrlParser: true });
 app.set('view engine', 'ejs');
+app.use(expressSanitizer());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 // MODEL CONFIG
 const Schema = mongoose.Schema;
@@ -78,6 +82,34 @@ app.get("/blogs/:id", (req, res) =>{
         }
     })
  });
+
+//EDIT ROUTE
+app.get("/blogs/:id/edit", (req, res)=>{
+    Blog.findById(req.params.id, (err, foundBlog) => {
+        if(err){
+            res.redirect("/blogs");
+        } else{
+            res.render("edit", {blog: foundBlog});
+        }
+    })
+})
+
+//  UPDATE ROUTES
+app.put("/blogs/:id", (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body);
+    Blogs.findByIdAndUpdate(req.param.id, req.body.blog, (err, updatedBlog) => {
+        if(err) 
+        { 
+            res.redirect("/blogs");
+        }
+        else 
+        {
+            res.redirect("/blogs" + req.param.id);
+        }
+    })
+})
+
+// DELETE ROUTES
 
 app.listen(PORT, () => {
     console.log('RESTful Blog App Server is running on port: ' + PORT);
