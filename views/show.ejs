@@ -7,13 +7,23 @@
             <div class="content">
                 <span><%= blog.created.toDateString() %></span>
             </div>
+            <hr>
             <div class="description">
                 <p><%- blog.body %></p>
             </div>
-            <a class="ui orange basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
-            <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
-                <button class="ui red basic button">Delete</button>
-            </form>
+
+            <div class="ui grid">
+            <div class="eight wide column">
+                <a class="ui positive button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+            </div>
+            <div class="eight wide column">
+                <form class="" id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="ui negative button">Delete</button>
+                </form>
+            </div>
+            </div>
+            
+            
         </div>
     </div>
 </div>

@@ -19,3 +19,7 @@ body {
   background: #2185d0;
   color: #fff;
 } 
+
+.ui .grid{
+  margin-top: 1rem;
+}
