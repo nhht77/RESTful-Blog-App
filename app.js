@@ -110,7 +110,15 @@ app.put("/blogs/:id", (req, res) => {
 })
 
 // DELETE ROUTES
-
+app.delete("/blogs/:id", (req, res) => {
+    Blog.findByIdAndDelete(req.params.id, err => {
+        if(err){
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs");
+        }
+    })
+})
 app.listen(PORT, () => {
     console.log('RESTful Blog App Server is running on port: ' + PORT);
 })
